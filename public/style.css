@@ -16,10 +16,31 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    border: 2px solid #D99177;
+    border-radius: 5px;
+    padding: 0.5rem;
 }
 
 .logo img{
     width: 150px;
     height: auto;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #A6847C;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #734E46;
+}
+
+#balance {
+    font-size: 2rem;
+    
 }
 
