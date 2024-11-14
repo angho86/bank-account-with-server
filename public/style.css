@@ -16,9 +16,10 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    border: 2px solid #D99177;
+    border: 1px solid #D99177;
     border-radius: 5px;
     padding: 0.5rem;
+    box-shadow: 0 0 8px #363E40;
 }
 
 .logo img{
@@ -41,6 +42,43 @@ button:hover {
 
 #balance {
     font-size: 2rem;
-    
 }
 
+
+.add-modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #D99177;
+    border: 1px solid #D99177;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #363E40;
+    z-index: 1000;
+  }
+  
+  .add-modal input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+    margin-right: 10px;
+  }
+  
+  .add-modal button {
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  .add-modal button:nth-of-type(1) {
+    background-color: #198f1d !important;
+    color: white;
+    border: none;
+  }
+  
+  .add-modal button:last-child {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
