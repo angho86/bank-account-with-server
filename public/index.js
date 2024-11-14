@@ -6,6 +6,7 @@ import { time } from "./functions.js";
 const addBtn = document.getElementById("add");
 const domBalance = document.getElementById("balance");
 const withdrawBtn = document.getElementById("withdraw");
+const historyBtn = document.getElementById("history");
 
 domBalance.innerText = balance;
 
@@ -54,7 +55,7 @@ function add(){
 
             const date = time();
 
-            history.push({date: date, amount: amount, balance: balance, action: add});
+            history.push({date: date, amount: amount, balance: balance, action: "add", balance: balance});
             domBalance.innerText = balance +'$';
             modal.remove();
 
@@ -108,7 +109,7 @@ function withdraw(){
 
             const date = time();
 
-            history.push({date: date, amount: amount, balance: balance, action: withdraw});
+            history.push({date: date, amount: amount, balance: balance, action: "withdraw", balance: balance});
             domBalance.innerText = balance +'$';
             modal.remove();
 
@@ -120,7 +121,40 @@ function withdraw(){
 
 }
 
+function showHistory(){
+    const modal = document.createElement('div');
+    modal.classList.add("history-modal");
+
+    let html = "<ul>";
+
+    for(let i=0; i < history.length; i++){
+        html += `<li>Date: ${history[i].date}</li>
+                <li>Action: ${history[i].action}</li>
+                <li>Amount: ${history[i].amount}</li>
+                <li>Balance: ${history[i].balance}</li>
+                <hr/>`;
+    }
+
+    html += "</ul>";
+
+    modal.innerHTML = html;
+
+      // Įdedame modalą į DOM (prie body pabaigos)
+  document.body.appendChild(modal);
+
+    // uzdarymo mygtukas
+
+    const closeBtn = document.createElement("button");
+    closeBtn.innerText = "Close";
+    modal.appendChild(closeBtn);
+
+    closeBtn.addEventListener('click', function(){
+        modal.remove();
+    });
+
+}
 
 
 addBtn.addEventListener('click', add);
 withdrawBtn.addEventListener('click', withdraw);
+historyBtn.addEventListener('click', showHistory);

@@ -82,3 +82,39 @@ button:hover {
     color: white;
     border: none;
   }
+
+hr {
+  margin: 5px 0;
+  background-color: #363E40;
+  border: none;
+  height: 2px;
+}
+
+.history-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #D99177;
+  border: 1px solid #D99177;
+  border-radius: 5px;
+  box-shadow: 0 0 8px #363E40;
+  z-index: 1000;
+  max-height: 70vh;  /* Maksimalus modalio aukštis - 80% nuo ekrano aukščio */
+  overflow-y: auto;  /* Paslanki juosta atsiranda tik tada, kai turinys viršija max-height */
+  width: 40%;
+  scroll-behavior: smooth;
+}
+
+.history-modal button {
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.history-modal button:nth-of-type(1) {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
